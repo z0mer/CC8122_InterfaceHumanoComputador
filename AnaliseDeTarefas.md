@@ -66,3 +66,114 @@ graph TD
     
     classDef default fill:#f9f9f9,stroke:#333,stroke-width:2px;
 ```
+
+## Modelo GOMS
+
+O modelo GOMS descreve o conhecimento necessário para que um utilizador atinja os seus objetivos através da interface do sistema, detalhando objetivos, métodos, operadores e regras de seleção.
+
+Abaixo, detalhamos o modelo GOMS para a tarefa principal da Anna: diagnosticar um erro do piloto através da sincronização de dados.
+
+**GOAL 0:** Analisar a carga cognitiva e o erro visual numa curva específica
+* **GOAL 1:** Sincronizar os dados da sessão
+  * **METHOD 1.A:** Sincronização automática via cabo USB
+    * *(SEL. RULE: O piloto acabou de chegar às boxes e os dados brutos estão nos dispositivos)*
+    * **OP 1.A.1:** Ligar o cabo USB dos dispositivos ao computador
+    * **OP 1.A.2:** Deslocar o rato para o botão "Importar Sessão"
+    * **OP 1.A.3:** Clicar com o botão esquerdo do rato
+    * **OP 1.A.4:** Aguardar e verificar o feedback visual (barra verde de "Sincronizado")
+* **GOAL 2:** Localizar o evento crítico (a curva com erro)
+  * **METHOD 2.A:** Selecionar a volta na lista de histórico
+    * *(SEL. RULE: O piloto sabe em qual volta cometeu o erro, ex: "Volta 5")*
+    * **OP 2.A.1:** Deslocar o cursor do rato para a lista de voltas
+    * **OP 2.A.2:** Clicar sobre a volta correspondente
+* **GOAL 3:** Interpretar o comportamento visual e fisiológico do piloto
+  * **METHOD 3.A:** Analisar o *dashboard* de forma integrada
+    * **OP 3.A.1:** Clicar em "Reproduzir" no vídeo *onboard*
+    * **OP 3.A.2:** Examinar visualmente a posição do *Gaze Point* (bolinha do olhar) no ecrã
+    * **OP 3.A.3:** Examinar o gráfico de Diâmetro Pupilar para identificar picos de sobrecarga
+    * **OP 3.A.4:** Comparar os dados anteriores com o traçado do carro no mapa
+
+---
+
+## Modelo CTT (ConcurTaskTrees)
+
+O modelo CTT permite-nos visualizar a hierarquia e a relação temporal ou de concorrência entre as tarefas. O CTT classifica as tarefas em quatro tipos: tarefas do utilizador (realizadas mentalmente/fora do sistema), do sistema (processamento sem interação), interativas (diálogo utilizador-sistema) e abstratas (composição de outras tarefas).
+
+Neste cenário, modelamos a "Avaliação de Performance" realizada pela Anna no *Pit Lane*.
+
+**Legenda de Relações CTT utilizadas:**
+* `>>` : Ativação (a segunda inicia após o fim da primeira)
+* `[]>>` : Ativação com passagem de informação (os dados da primeira alimentam a segunda)
+* `|||` : Tarefas concorrentes (podem ser realizadas ao mesmo tempo)
+
+**Estrutura CTT (em formato de lista hierárquica):**
+
+1. **Avaliar Performance Cognitiva do Piloto** `[Tarefa Abstrata]`
+
+   1.1. **Importar e Sincronizar Dados** `[Tarefa Abstrata]` `[]>>` *(passa os dados sincronizados para)* 1.2
+
+       1.1.1. Ligar dispositivos via USB `[Tarefa Interativa]` `>>`
+
+       1.1.2. Acionar "Merge Automático" `[Tarefa Interativa]` `[]>>`
+
+       1.1.3. Processar Merge (Vídeo + Telemetria) `[Tarefa do Sistema]`
+
+   1.2. **Analisar Volta Específica** `[Tarefa Abstrata]` `>>` 1.3
+
+       1.2.1. Selecionar a volta no sistema `[Tarefa Interativa]` `[]>>`
+
+       1.2.2. Reproduzir vídeo sincronizado `[Tarefa Interativa]` `|||` *(concorre com)* 1.2.3
+
+       1.2.3. Interpretar onde o piloto olhou (Gaze) `[Tarefa do Utilizador]` `|||`
+
+       1.2.4. Interpretar carga no gráfico pupilar `[Tarefa do Utilizador]`
+
+   1.3. **Gerar Relatório de Fadiga para Preparador Físico** `[Tarefa Abstrata]`
+
+       1.3.1. Clicar em Exportar PDF `[Tarefa Interativa]` `[]>>`
+
+       1.3.2. Compilar dados longitudinais `[Tarefa do Sistema]`
+
+### Diagrama CTT
+
+```mermaid
+graph TD
+    T0("Avaliar Performance Cognitiva do Piloto<br>[Abstrata]") --> T1("1.1 Importar e Sincronizar Dados<br>[Abstrata]")
+    T0 --> T2("1.2 Analisar Volta Específica<br>[Abstrata]")
+    T0 --> T3("1.3 Gerar Relatório de Fadiga<br>[Abstrata]")
+
+    %% Relações de Nível 1
+    T1 -- "[]>>" --> T2
+    T2 -- ">>" --> T3
+
+    %% Decomposição de 1.1
+    T1 --> T1_1("Ligar dispositivos<br>[Interativa]")
+    T1 --> T1_2("Acionar Merge Automático<br>[Interativa]")
+    T1 --> T1_3("Processar Merge<br>[Sistema]")
+    T1_1 -- ">>" --> T1_2
+    T1_2 -- "[]>>" --> T1_3
+
+    %% Decomposição de 1.2
+    T2 --> T2_1("Selecionar Volta<br>[Interativa]")
+    T2 --> T2_2("Reproduzir Vídeo<br>[Interativa]")
+    T2 --> T2_3("Interpretar Gaze Point<br>[Utilizador]")
+    T2 --> T2_4("Interpretar Gráfico Pupilar<br>[Utilizador]")
+    
+    T2_1 -- "[]>>" --> T2_2
+    T2_2 -- "|||" --> T2_3
+    T2_3 -- "|||" --> T2_4
+
+    %% Decomposição de 1.3
+    T3 --> T3_1("Clicar Exportar PDF<br>[Interativa]")
+    T3 --> T3_2("Compilar dados longitudinais<br>[Sistema]")
+    T3_1 -- "[]>>" --> T3_2
+
+    classDef abstrata fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef interativa fill:#fff9c4,stroke:#fbc02d,stroke-width:2px;
+    classDef sistema fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef utilizador fill:#fce4ec,stroke:#c2185b,stroke-width:2px;
+
+    class T0,T1,T2,T3 abstrata;
+    class T1_1,T1_2,T2_1,T2_2,T3_1 interativa;
+    class T1_3,T3_2 sistema;
+    class T2_3,T2_4 utilizador;
