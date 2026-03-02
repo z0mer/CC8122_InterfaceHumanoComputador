@@ -1,77 +1,6 @@
-# Cenário de Análise de Problema — Interface Humano-Computador
-### Projeto: Análise Pupilométrica e o Tempo de Reação em Pilotos Automotivos
-**Equipe:** Anna Carolina R. P. Zomer (22.224.017-8) | Humberto de O. Pellegrini (22.224.019-4)  
-**Orientador:** Prof. Dr. Victor Perrone de Lima Varela
+# Cenário de Análise de Problema
 
----
-
-## 1. Ambiente e Contexto
-
-### 🏁 Ambiente Físico
-O sistema é utilizado no **Pit Lane (Box) do Autódromo de Interlagos**, um ambiente industrial, hostil e de altíssima pressão temporal.
-
-- **Ruído extremo:** O som dos motores impede comunicação verbal eficiente. Qualquer instrução precisa ser visual ou por gestos.
-- **Calor e vibração:** O asfalto irradia calor, e o piloto retorna suado e com adrenalina elevada.
-- **Espaço improvisado:** A engenheira opera um notebook apoiado em pilhas de pneus ou agachada ao lado do carro, cercada por ferramentas mecânicas, cabos e combustível.
-- **Iluminação variável:** A tela precisa ser legível sob sol direto ou à noite sob holofotes artificiais.
-- **Conectividade limitada:** Não há garantia de Wi-Fi estável; os dados precisam ser processados localmente via USB.
-
-### ⏱️ Contexto Temporal
-- A equipe tem **apenas ~5 minutos** entre sessões para extrair dados, analisar e ajustar o setup do carro.
-- O sistema precisa entregar resultados em **menos de 30 segundos** após a conexão do cabo USB.
-- Qualquer atraso significa **perda de tempo de pista**, que é o recurso mais caro no automobilismo.
-
-### 🧠 Contexto Social e Emocional
-- Clima de **urgência constante** e cobrança da equipe ("Anna, cadê o dado?").
-- O piloto está cheio de adrenalina, impaciente, e quer respostas visuais imediatas.
-- A engenheira sente **ansiedade paralisante** se o software travar ou a sincronia falhar.
-- Não há espaço para "ler o manual" — a interface precisa ser **autoexplicativa**.
-
----
-
-## 2. Atores (Personas)
-
-### 👩‍💻 Persona Primária: Anna (Engenheira de Dados)
-> 🗣️ *"Eu preciso que o vídeo e a telemetria conversem sozinhos. Meu trabalho é criar estratégia pra ganhar a corrida, não perder 20 minutos sincronizando arquivo na mão."*
-
-| Aspecto | Descrição |
-|---|---|
-| **Idade** | 23 anos |
-| **Perfil** | Estudante de Ciência da Computação, analítica, metódica |
-| **Papel** | Operadora do sistema — configura, extrai e analisa os dados |
-| **Habilidades** | Expert em lógica e dados, mas precisa de agilidade sob pressão |
-| **Tarefas** | Calibrar Eye Tracker, baixar logs, sincronizar vídeo + dados, gerar relatório |
-| **Necessidade principal** | Automação da sincronização e exportação rápida (CSV) |
-| **Frustração** | Perder tempo precioso fazendo trabalho manual e repetitivo |
-
-### 🏎️ Persona Primária: Humberto (Piloto)
-> 🗣️ *"Cara, eu sei que fui lento na curva 3, só me mostra no vídeo ONDE eu olhei errado."*
-
-| Aspecto | Descrição |
-|---|---|
-| **Idade** | 24 anos |
-| **Perfil** | Piloto competitivo, visual, prático e impaciente |
-| **Papel** | Consumidor do dado — vê o replay na tela que a Anna mostra |
-| **Habilidades** | Pilotagem extrema, mas prefere interfaces visuais diretas |
-| **Tarefas** | Dirigir o veículo e assistir ao replay com o "Gaze Point" sobreposto |
-| **Necessidade principal** | Interface limpa, botões grandes, feedback visual imediato |
-| **Frustração** | Não conseguir ver rapidamente onde errou |
-
-### 🧬 Persona Secundária: Varela (Preparador Físico)
-> 🗣️ *"Se a pupila dilatar de cansaço na volta 15, o tempo sobe. Eu treino o cérebro, não só o músculo."*
-
-| Aspecto | Descrição |
-|---|---|
-| **Idade** | 42 anos |
-| **Perfil** | Fisiologista do Esporte, experiente e observador |
-| **Papel** | Analista de longo prazo — planejamento fora da pista |
-| **Habilidades** | Expert em biometria, dificuldade com software de engenharia |
-| **Tarefas** | Analisar gráficos de carga cognitiva nas voltas finais |
-| **Necessidade principal** | Relatórios simplificados (PDF) com gráficos de tendência |
-
----
-
-## 3. Objetivos dos Atores
+## Objetivos dos Atores
 
 | Ator | Objetivo Principal | Objetivo Secundário |
 |---|---|---|
@@ -81,7 +10,7 @@ O sistema é utilizado no **Pit Lane (Box) do Autódromo de Interlagos**, um amb
 
 ---
 
-## 4. Esquema de Interação Humano-Computador
+## Esquema de Interação Humano-Computador
 
 ### Fluxo Principal de Interação
 
@@ -194,7 +123,7 @@ O sistema é utilizado no **Pit Lane (Box) do Autódromo de Interlagos**, um amb
 
 ---
 
-## 5. Narrativa do Cenário de Análise/Problema
+## Narrativa do Cenário de Análise/Problema
 
 ### 🎬 "A Corrida Contra o Relógio de Anna"
 
@@ -254,7 +183,7 @@ No hotel, Anna exporta um relatório PDF para o Varela. O relatório mostra um g
 
 ---
 
-## 6. Como a Interface Agrega Valor ao Usuário
+## Como a Interface Agrega Valor ao Usuário
 
 ### O Problema Central
 Hoje, **não existe uma ferramenta única** que cruze dados de rastreamento ocular com telemetria veicular no contexto de corridas. As soluções existentes atendem apenas metade do problema:
@@ -310,30 +239,5 @@ Hoje, **não existe uma ferramenta única** que cruze dados de rastreamento ocul
 | **Humberto** | Vê visualmente onde errou no vídeo | Feedback imediato entre sessões |
 | **Varela** | Recebe relatório de fadiga cognitiva automatizado | Dados longitudinais para treino |
 | **Equipe** | Não perde tempo de pista esperando dados | Economia de ~R$2.000/hora |
-
----
-
-## 7. Mapa de Empatia (Persona: Anna)
-
-| Quadrante | Resposta |
-|---|---|
-| **O que VÊ?** | O Humberto suado e a equipe impaciente esperando respostas, enquanto a tela mostra arquivos CSV desconexos que não se alinham. |
-| **O que OUVE?** | O som ensurdecedor dos motores e o rádio do chefe: *"Anna, temos 5 minutos, cadê o dado?"* |
-| **O que PENSA e SENTE?** | Ansiedade paralisante: *"Se o software travar agora, vamos perder o treino e a culpa será minha."* |
-| **O que FALA e FAZ?** | Grita *"Humberto, pare de mexer a cabeça!"* enquanto digita freneticamente alternando janelas. |
-| **DORES** | Perder tempo fazendo trabalho manual repetitivo sob pressão extrema, com risco de erro humano. |
-| **NECESSIDADES** | Ferramenta que faça ingestão automática dos dados assim que o cabo for conectado, entregando análise pronta em segundos. |
-
----
-
-## 8. Conclusão — Por que este projeto é necessário?
-
-O automobilismo moderno já gera dados de telemetria em abundância, mas **ninguém está olhando para o piloto**. As ferramentas existentes tratam o carro como máquina e ignoram que o piloto é um sistema biológico com limitações cognitivas.
-
-Nosso sistema preenche essa lacuna ao:
-1. **Unificar dados silados** (olhar + carro + vídeo) em uma única plataforma
-2. **Automatizar a sincronização** eliminando o gargalo humano
-3. **Traduzir dados complexos em feedback visual** acessível ao piloto
-4. **Quantificar o invisível** — a carga cognitiva — transformando "achismo" em ciência
 
 > *"O dado de telemetria te diz O QUE o carro fez. O nosso sistema te diz POR QUE o piloto fez o carro fazer isso."*
