@@ -75,19 +75,32 @@ Abaixo, detalhamos o modelo GOMS para a tarefa principal da Anna: diagnosticar u
 
 **GOAL 0:** Analisar a carga cognitiva e o erro visual numa curva específica
 * **GOAL 1:** Sincronizar os dados da sessão
-  * **METHOD 1.A:** Sincronização automática via cabo USB
-    * *(SEL. RULE: O piloto acabou de chegar às boxes e os dados brutos estão nos dispositivos)*
-    * **OP 1.A.1:** Ligar o cabo USB dos dispositivos ao computador
-    * **OP 1.A.2:** Deslocar o rato para o botão "Importar Sessão"
-    * **OP 1.A.3:** Clicar com o botão esquerdo do rato
-    * **OP 1.A.4:** Aguardar e verificar o feedback visual (barra verde de "Sincronizado")
+    * **METHOD 1.A:** Sincronização automática via cabo USB
+        * *(SEL. RULE: O piloto acabou de chegar às boxes e os dados brutos estão disponíveis fisicamente nos dispositivos)*
+        * **OP 1.A.1:** Ligar o cabo USB dos dispositivos ao computador
+        * **OP 1.A.2:** Deslocar o rato para o botão "Importar Sessão"
+        * **OP 1.A.3:** Clicar com o botão esquerdo do rato
+        * **OP 1.A.4:** Aguardar e verificar o feedback visual (barra verde de "Sincronizado")
+    * **METHOD 1.B:** Sincronização automática via Bluetooth
+        * *(SEL. RULE: O piloto acabou de chegar às boxes e os dispositivos suportam e estão habilitados para pareamento sem fio)*
+        * **OP 1.B.1:** Ligar o Bluetooth do computador e confirmar o pareamento com os dispositivos
+        * **OP 1.B.2:** Deslocar o rato para o botão "Sincronizar via Bluetooth"
+        * **OP 1.B.3:** Clicar com o botão esquerdo do rato
+        * **OP 1.B.4:** Aguardar a transferência e verificar o feedback visual (barra verde de "Sincronizado")
+
 * **GOAL 2:** Localizar o evento crítico (a curva com erro)
-  * **METHOD 2.A:** Selecionar a volta na lista de histórico
-    * *(SEL. RULE: O piloto sabe em qual volta cometeu o erro, ex: "Volta 5")*
-    * **OP 2.A.1:** Deslocar o cursor do rato para a lista de voltas
-    * **OP 2.A.2:** Clicar sobre a volta correspondente
+    * **METHOD 2.A:** Selecionar a volta na lista de histórico
+        * *(SEL. RULE: O piloto sabe exatamente em qual volta cometeu o erro, ex: "Volta 5")*
+        * **OP 2.A.1:** Deslocar o cursor do rato para a lista de histórico de voltas
+        * **OP 2.A.2:** Clicar sobre a volta correspondente na lista
+    * **METHOD 2.B:** Fazer busca pelo evento ou volta
+        * *(SEL. RULE: O piloto não tem certeza do número da volta ou deseja ir direto para uma curva específica)*
+        * **OP 2.B.1:** Deslocar o cursor do rato para o campo de busca
+        * **OP 2.B.2:** Digitar o termo desejado (ex: "Curva 3" ou "Volta 5")
+        * **OP 2.B.3:** Pressionar Enter ou clicar no botão de buscar
+        * **OP 2.B.4:** Clicar sobre o resultado correspondente retornado pela busca
+
 * **GOAL 3:** Interpretar o comportamento visual e fisiológico do piloto
-  * **METHOD 3.A:** Analisar o *dashboard* de forma integrada
     * **OP 3.A.1:** Clicar em "Reproduzir" no vídeo *onboard*
     * **OP 3.A.2:** Examinar visualmente a posição do *Gaze Point* (bolinha do olhar) no ecrã
     * **OP 3.A.3:** Examinar o gráfico de Diâmetro Pupilar para identificar picos de sobrecarga
