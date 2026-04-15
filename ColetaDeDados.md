@@ -4,7 +4,7 @@
 
 **Que dados coletar?**
 * **Dados de Contexto e Ambiente:** Nível de ruído, condições de iluminação no *pit lane*, hardware utilizado (tamanho da tela do notebook, uso de mouse ou *touchpad*).
-* **Dados de Tarefa e Eficiência:** Tempo médio gasto atualmente para sincronizar vídeos com dados de telemetria, taxa de erros na ingestão de arquivos, softwares mais utilizados (MoTeC, Racelogic).
+* **Dados de Tarefa e Eficiência:** Tempo médio gasto atualmente para sincronizar vídeos com dados de telemetria, taxa de erros na ingestão de arquivos, softwares mais utilizados (MoTeC, Pupil Labs).
 * **Dados Cognitivos e Biométricos:** Principais indicadores de fadiga visual que os preparadores buscam (ex: dilatação da pupila, fixação do olhar), dificuldades de interpretação gráfica sob pressão.
 * **Dados de UX (Experiência):** Maiores frustrações da equipe técnica durante o intervalo curto entre os treinos, nível de estresse com as interfaces atuais.
 
