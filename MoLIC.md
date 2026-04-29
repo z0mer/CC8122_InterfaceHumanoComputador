@@ -17,7 +17,7 @@ flowchart TD
     d+u: valores de calibração`"]
 
     %% Cancelar/Voltar da Tela 1
-    Cena1 -->|u: cancelar / voltar| Menu
+    Cena1 -.->|u: cancelar / voltar| Menu
 
     %% Processamento dos Dados
     Preposto1[■]
@@ -36,7 +36,7 @@ flowchart TD
     u: selecionar sessão X`"]
     
     %% Cancelar/Voltar do Histórico
-    Hist -->|u: voltar| Menu
+    Hist -.->|u: voltar| Menu
     
     %% Avança para Tela 2
     Hist -->|u: carregar dados da sessão| Cena2
@@ -45,18 +45,20 @@ flowchart TD
     %% ==========================================
     %% ENCONTRO DOS FLUXOS (Tela 2)
     %% ==========================================
+    Preposto2[■]
     Cena2["`**Comparar Telemetrias (Tela 2)**
     d: vídeo sincronizado com Gaze Point
     d: telemetria veicular básica
     u: ajustar sincronia manual`"]
 
     %% Transições da Tela 2 (Voltar/Cancelar)
-    Cena2 -->|u: voltar para configuração| Cena1
-    Cena2 -->|u: voltar para histórico| Hist
-    Cena2 -->|u: cancelar análise| Menu
+    Cena2 -.->|u: voltar para configuração| Cena1
+    Cena2 -.->|u: voltar para histórico| Hist
+    Cena2 -.->|u: cancelar análise| Menu
     
     %% Avança para Tela 3
-    Cena2 -->|u: ver gráficos plotados| Cena3
+    Cena2 --> |u: plotar os gráficos| Preposto2
+    Preposto2 -->|u: ver gráficos plotados| Cena3
 
 
     %% ==========================================
@@ -67,17 +69,20 @@ flowchart TD
     d: correlação Olhar x Telemetria`"]
 
     %% Transições da Tela 3
-    Cena3 -->|u: voltar| Cena2
-    Cena3 -->|u: cancelar análise| Menu
+    Cena3 -.->|u: voltar| Cena2
+    Cena3 -.->|u: cancelar análise| Menu
 
     %% Processo de Exportação
-    Preposto2[■]
-    Cena3 -->|u: exportar relatório| Preposto2
+    Preposto3[■]
+    
+    Cena3 -->|u: exportar relatório| Preposto3
+    Preposto3 --> |d: relatório pronto para exportar| Cena4
     
     %% Pop-up de Salvamento e Fim
-    Preposto2 -->|"d: abrir diálogo 'Salvar Como...'<br/>u: escolher local e confirmar"| Sucesso{■}
-    Sucesso -->|"d: relatório salvo com sucesso!<br/>gcc: Gerenciar Análise"| End((( )))
-
+    Cena4["`**Exportar relatórios (Tela 4)**
+    d: abrir diálogo 'Salvar Como...'<br/>u: escolher local e confirmar`"]
+    Cena4 -->|"d: relatório salvo com sucesso!<br/>gcc: Gerenciar Análise"| End((( )))
+    
     %% ==========================================
     %% ESTILIZAÇÃO PADRÃO MOLIC
     %% ==========================================
@@ -86,9 +91,10 @@ flowchart TD
     style Cena1 fill:#fff,stroke:#333,stroke-width:2px,rx:15,ry:15,text-align:left
     style Cena2 fill:#fff,stroke:#333,stroke-width:2px,rx:15,ry:15,text-align:left
     style Cena3 fill:#fff,stroke:#333,stroke-width:2px,rx:15,ry:15,text-align:left
+    style Cena4 fill:#fff,stroke:#333,stroke-width:2px,rx:15,ry:15,text-align:left
     style Hist fill:#fff,stroke:#333,stroke-width:2px,rx:15,ry:15,text-align:left
     style Preposto1 fill:#000,stroke:#000,color:#fff
     style Preposto2 fill:#000,stroke:#000,color:#fff
-    style Sucesso fill:#000,stroke:#000,color:#fff
+    style Preposto3 fill:#000,stroke:#000,color:#fff
     style End fill:#000,stroke:#333,stroke-width:2px
 ```
