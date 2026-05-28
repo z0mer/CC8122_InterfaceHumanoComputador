@@ -3,6 +3,12 @@ Tanto o front quanto o back estão disponíveis no link abaixo
 
 [Link do Repositório](https://github.com/z0mer/AnalisePupilometrica.git)
 
+## Interfaces:
+
+![Tela Inicial](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj01.png)
+![Tela Inicial](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj02.png)
+![Tela Inicial](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj03.png)
+
 ## Instruções: 
 Este repositório contém dois projetos principais:
 
