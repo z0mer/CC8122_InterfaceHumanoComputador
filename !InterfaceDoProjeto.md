@@ -1,4 +1,4 @@
-Como iniciamos o projeto antes dessa matéria existir, os códigos estão disponíveis em outro repositório. 
+Como iniciamos o projeto de interface após o início do projeto do TCC, os códigos estão disponíveis em outro repositório. 
 Tanto o front quanto o back estão disponíveis no link abaixo 
 
 [Link do Repositório](https://github.com/z0mer/AnalisePupilometrica.git)
