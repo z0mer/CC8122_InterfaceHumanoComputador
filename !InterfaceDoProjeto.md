@@ -8,6 +8,8 @@ Tanto o front quanto o back estão disponíveis no link abaixo
 ![Tela Inicial](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj01.png)
 ![Tela Inicial](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj02.png)
 ![Tela Inicial](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj03.png)
+![Tela Gráfico](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj04.png)
+![Tela Gráfico](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/IMG/Pj05.png)
 
 ## Instruções: 
 Este repositório contém dois projetos principais:
