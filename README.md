@@ -18,5 +18,7 @@ Este projeto se baseia no Trabalho de Conclusão de Curso (TCC) entitulado **An�
 - [Modelo Conceitual](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/ModeloConceitual.md) 
 - [MOLIC](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/MoLIC.md)
 - [Planejamento da Avaliação](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/PlanejamentoAvaliacao.md)
-- [Avaliação de IHC através de Inspeção Heurística](docs/13_heuristica.md)
-- [Avaliação de Usabilidade baseado em Observação do Usuário](docs/14_observacao_usuario.md)
+- [Avaliação de IHC através de Inspeção Heurística](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/Heuristica.md)
+- [Avaliação de Usabilidade baseado em Observação do Usuário](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/ObservacaoUsuario.md)
+
+- [Interface Final do Projeto](https://github.com/z0mer/CC8122_InterfaceHumanoComputador/blob/main/ObservacaoUsuario.md)
