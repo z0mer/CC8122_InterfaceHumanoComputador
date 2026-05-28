@@ -101,8 +101,6 @@ Antes de iniciar o teste com o usuário, o avaliador deve garantir que:
   - `teste_pupil.csv` — arquivo de eye tracking no formato do Pupil Labs
   - `teste_motec.csv` — arquivo de telemetria no formato do MoTeC
   - `teste_fixations.csv` — arquivo de fixações (opcional)
-- A gravação de tela está ativa (OBS, Loom ou similar)
-- Um link de vídeo do Google Drive (público) está disponível para a tarefa de cadastro
 
 ### Passo 2: Lista de Tarefas que o Usuário Deve Cumprir
 
@@ -169,7 +167,6 @@ Antes de iniciar, o avaliador deve ler ao participante:
 - Roteiro de tarefas impresso para o participante
 - Formulário de perfil impresso ou digital
 - Cronômetro
-- Ferramenta de gravação de tela ativa
 - Bloco de anotações para o avaliador registrar erros e comportamentos
 
 ---
@@ -213,14 +210,6 @@ Antes de iniciar, o avaliador deve ler ao participante:
 | **4 — Processar e visualizar** | Sucesso Total | 0 | — | 8 segundos | Muito Satisfeito |
 | **5 — Baixar relatório PDF** | Sucesso Total | 0 | — | 20 segundos | Satisfeito |
 | **6 — Adicionar piloto existente sem CSV** | Sucesso Total | 0 | — | 18 segundos | Satisfeito |
-
----
-
-### Links dos vídeos
-
-- Vídeo do teste — Usuário 1: `[link do Google Drive]`
-- Vídeo do teste — Usuário 2: `[link do Google Drive]`
-- Vídeo do teste — Usuário 3: `[link do Google Drive]`
 
 ---
 
